@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RITCHE MEDICINE STORE</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* ... (styles remain unchanged) ... */
+  </style>
+</head>
+
+<body>
+  <!-- ... (HTML structure remains unchanged) ... -->
+
+  <script>
+    // ... (existing code remains unchanged until updateDashboard function) ...
+
+    // ===== DASHBOARD =====
+    let salesChart = null;
+    function updateDashboard() {
+      const today = getToday();
+      const todaySales = allSales
+        .filter(s => s.date === today)
+        .reduce((sum, s) => sum + s.price, 0);
+
+      const dailyTotals = {};
+      allSales.forEach(s => {
+        dailyTotals[s.date] = (dailyTotals[s.date] || 0) + s.price;
+      });
+
+      const dates = Object.keys(dailyTotals).sort();
+      const values = dates.map(d => dailyTotals[d]);
+
+      const highest = values.length ? Math.max(...values).toFixed(2) : "0.00";
+      const lowest = values.length ? Math.min(...values).toFixed(2) : "0.00";
+      const totalRevenue = allSales.reduce((sum, s) => sum + s.price, 0).toFixed(2);
+
+      document.getElementById('todaySales').textContent = todaySales.toFixed(2);
+      document.getElementById('highestSales').textContent = highest;
+      document.getElementById('lowestSales').textContent = lowest;
+      document.getElementById('totalRevenue').textContent = totalRevenue;
+
+      const logEl = document.getElementById('salesLog');
+      const recent = allSales.slice(-10).reverse();
+      logEl.innerHTML = recent.length
+        ? recent.map(s => `<div>[${s.time}] ${s.productName} - $${s.price.toFixed(2)}</div>`).join('')
+        : "<div>No sales yet.</div>";
+
+      renderChart(dates, values);
+    }
+
+    function renderChart(labels, data) {
+      const ctx = document.getElementById('salesChart').getContext('2d');
+      if (salesChart) salesChart.destroy();
+
+      // FIXED: Corrected Chart.js configuration syntax
+      salesChart = new Chart(ctx, {
+        type: 'bar',
+        data: {  // <-- ADDED MISSING 'data' PROPERTY
+          labels: labels.map(d => d.split('-').slice(1).join('-')),
+          datasets: [{
+            label: 'Daily Sales ($)',
+            data: data,
+            backgroundColor: '#3498db',
+            borderColor: '#2980b9',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: { beginAtZero: true }
+          },
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+    }
+
+    // ... (rest of the code remains unchanged) ...
+  </script>
+</body>
+
+</html>
