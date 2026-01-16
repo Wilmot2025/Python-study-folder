@@ -8,10 +8,22 @@
 #y = 59
 #print(x+y) 
 
-a = 7
-b = 500
-if b >= 335: 
-    print(a) 
+#a = 7
+#b = 500
+#if b >= 335: 
+    #print(a) 
+    
+#x = 10
+#y = 10
+#print(f"{x} == {y}: {x == y}")  # True
+
+#y = 20
+#print(f"{x} == {y}: {x == y}")  # False
 
 
+x = 10
+y = 30
+print(f"{x} < = {y}: {x > y}")  # True
 
+y = 10
+print(f"{x} == {y}: {x == y}")  # False
