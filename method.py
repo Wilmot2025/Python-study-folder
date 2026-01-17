@@ -15,5 +15,43 @@
 # 17. capitalize() => it is used to convert the first character of the string to uppercase and the rest to lowercase
 
 name = "wilmot Togar Okai"
+print(len(name)) 
 
-print(len)
+name = "wilmot Togar Okai"
+print(name.upper())    # WILMOT TOGAR OKAI
+print(name.lower())    # wilmot togar okai
+print(name.title())    #  Wilmot Togar Okai
+
+
+name = "Ritchie Okai"
+name_parts = name.split()
+print(name_parts)      # ['wilmot', 'Togar', 'Okai']
+first_name = name_parts[0]
+last_name = name_parts[-1]  
+
+name = "Ritchie Okai"
+print(name.count('i')) 
+
+name = "Ritchie Okai"
+print(name.count('i')) 
+
+school_name = name.replace('Ritchie Okai', 'Shobhit')
+print(school_name)
+
+name = "John Brown"
+print(name.find('B'))
+
+
+name = "John Brown"
+result = "-".join(name)
+print(result)
+
+name = "John Brown"
+combined = "".join(name.split())
+print(combined)
+
+
+
+
+
+ 
