@@ -40,7 +40,8 @@ print(f"{a} != {b}: {a != b}")  # False
 # 3. Greater Than (>) - checks if left value is greater than right
 num1 = 50
 num2 = 30
-print(f"{num1} > {num2}: {num1 > num2}")  # True
+print(f"{num1} > {num2}: {num1 > 
+      num2}")  # True
 
 # 4. Less Than (<) - checks if left value is less than right
 num1 = 20
@@ -120,8 +121,15 @@ if value == 10:  # Comparison
 # if value = 10:  # This will cause an error!
 #     print("This won't work")
 
-first_student_name  ="WIlmot"
-second_student_name = "SHarik"
-print(f"they are called {"Wilmot and SHarik"} ")
+ #arithmetic operatore 
+wilmot = 10
+wilmot = wilmot +40
+print(f"{wilmot} ") 
+
+wilmot += 50
+print(f"{wilmot} ")
+
+
+
 
 

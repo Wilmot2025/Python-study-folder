@@ -18,3 +18,7 @@
 #print(class_regular_course)
 #print(class_lab) 
 
+
+first_student_name  ="WIlmot"
+second_student_name = "SHarik"
+print(f"the first and second student names are  {"Wilmot and SHarik"} ")

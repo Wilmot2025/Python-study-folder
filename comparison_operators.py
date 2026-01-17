@@ -100,3 +100,8 @@ if value == 10:  # Comparison
 # Common mistake:
 # if value = 10:  # This will cause an error!
 #     print("This won't work")
+
+ #arithmetic operatore 
+wilmot = 10
+wilmot = wilmot +1 
+print("wilmot") 
