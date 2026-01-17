@@ -129,6 +129,44 @@ print(f"{wilmot} ")
 wilmot += 50
 print(f"{wilmot} ")
 
+# subtraction
+cash_received = 10000
+cash_spend =  8000
+balance = cash_received - cash_spend
+print(f"Balance: {balance}")
+
+wilmot = 90
+wilmot = wilmot -10
+print(f"{wilmot}")
+
+wilmot -= 50
+print(f"{wilmot} ") 
+
+#multipication
+
+wilmot = 90
+wilmot = wilmot *3
+print(f"{wilmot}")
+
+wilmot *= 3
+print(f"{wilmot} ") 
+
+
+# Division
+wilmot = 90
+wilmot = wilmot /2
+print(f"{wilmot}")
+
+wilmot /= 2
+print(f"{wilmot} ") 
+
+#exponent
+wilmot = 5
+wilmot = wilmot **5
+print(wilmot) 
+
+wilmot **= 5
+print(wilmot) 
 
 
 
