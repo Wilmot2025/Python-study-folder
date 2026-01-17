@@ -168,6 +168,13 @@ print(wilmot)
 wilmot **= 5
 print(wilmot) 
 
+#modulous
+remainder = 5
+remainder = wilmot %2
+print(remainder) 
+
+wilmot %= 2
+print(remainder) 
 
 
 
