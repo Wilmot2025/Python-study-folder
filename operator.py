@@ -119,3 +119,9 @@ if value == 10:  # Comparison
 # Common mistake:
 # if value = 10:  # This will cause an error!
 #     print("This won't work")
+
+first_student_name  ="WIlmot"
+second_student_name = "SHarik"
+print(f"they are called {"Wilmot and SHarik"} ")
+
+
