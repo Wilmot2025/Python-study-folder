@@ -25,3 +25,12 @@
 ## copy() => we can copy all elemente from one list to another list.
 
 
+listt = [11,22,33,44,55,66,66,66, 1, 31, 12]
+listt.append(111)
+print(listt)
+
+listt.extend([222,333])
+print(listt)
+print("pzz see here")
+# listt.append([444,555])
+print(listt)
